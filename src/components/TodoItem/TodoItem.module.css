@@ -1,0 +1,53 @@
+.todoItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.todoText {
+  flex: 1;
+  margin-left: 16px;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e0e0e0;
+}
+
+.editButton {
+  background-color: #ffa726;
+  color: white;
+}
+
+.deleteButton {
+  background-color: #ef5350;
+  color: white;
+}
+
+.editButton:hover {
+  background-color: #ff9800;
+}
+
+.deleteButton:hover {
+  background-color: #f44336;
+}
