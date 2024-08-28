@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# Todo List App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es una aplicación de lista de tareas (To-Do List) desarrollada en React. La aplicación permite a los usuarios agregar, editar, eliminar y filtrar tareas. También utiliza `json-server` para simular una API de backend para la persistencia de los datos.
 
-## Available Scripts
+## Características
 
-In the project directory, you can run:
+1. **Funcionalidad Básica**:
+   - Agregar, editar y eliminar tareas.
+   - Marcar tareas como completadas.
+   - Filtrar tareas por todas, completadas y pendientes.
 
-### `npm start`
+2. **Manejo de Estado**:
+   - Utiliza `Zustand` para el manejo de estado de la aplicación.
+   - Persistencia de tareas utilizando `json-server` como API simulada.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. **Optimización**:
+   - Lazy loading de componentes.
+   - Memoization para evitar renderizaciones innecesarias.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instalación
 
-### `npm test`
+### Requisitos previos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (versión 14 o superior)
+- npm o yarn
 
-### `npm run build`
+### Pasos de instalación
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clona el repositorio:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   git clone https://github.com/camilocas88/todoListReact.git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2.	Navega al directorio del proyecto:
+  ```bash
+  cd todo-list-app
 
-### `npm run eject`
+3.	Instala las dependencias:
+  ```bash
+  npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Ejecución
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Servidor de Desarrollo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1.	Inicia el servidor de desarrollo de React:
+  ```bash
+  npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Esto abrirá la aplicación en tu navegador en http://localhost:3000.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+API Simulada con json-server
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+	1.	Inicia el servidor json-server para simular una API de backend:
 
-### Code Splitting
+  npm run json-server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+Esto iniciará el servidor en http://localhost:5001. El archivo db.json en la raíz del proyecto se utilizará como la fuente de datos para las tareas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Comandos disponibles
 
-### Making a Progressive Web App
+	•	npm start: Inicia la aplicación React en modo de desarrollo.
+	•	npm run json-server: Inicia el servidor json-server en el puerto 5001.
+	•	npm run build: Construye la aplicación para producción en la carpeta build.
+	•	npm test: Ejecuta las pruebas de la aplicación utilizando Jest.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Arquitectura del Proyecto
 
-### Advanced Configuration
+	•	src/components: Contiene los componentes de la aplicación, como TodoItem, TodoList, EditTodoModal, entre otros.
+	•	src/store: Maneja el estado de la aplicación utilizando Zustand.
+	•	public: Contiene el archivo index.html que sirve como la entrada de la aplicación.
+	•	db.json: Archivo utilizado por json-server para simular la API de backend.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Persistencia de Tareas
 
-### Deployment
+La persistencia de las tareas se realiza a través de json-server, que simula una API RESTful. Las operaciones CRUD se realizan en este servidor para agregar, editar y eliminar tareas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Optimización
 
-### `npm run build` fails to minify
+	•	Lazy Loading: Los componentes se cargan de manera diferida utilizando React.lazy y Suspense.
+	•	Memoization: Se utiliza React.memo para evitar renderizaciones innecesarias en los componentes que no han cambiado sus props.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contribuir
+
+Las contribuciones son bienvenidas. Por favor, asegúrate de seguir las mejores prácticas de desarrollo y abrir un pull request con tus cambios.
+
+Licencia
+
+Este proyecto está licenciado bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
+
